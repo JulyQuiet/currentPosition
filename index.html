@@ -1,31 +1,24 @@
 <!DOCTYPE html>
-<html>
-<head> 
-<meta charset="utf-8"> 
-<title>菜鸟教程(runoob.com)</title> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>当前位置</title>
+  <link rel="stylesheet" href="./css/index.css" type="text/css">
 </head>
 <body>
-<p id="demo">点击按钮获取您当前坐标（可能需要比较长的时间获取）：</p>
-<button onclick="getLocation()">点我</button>
-<script>
-var x=document.getElementById("demo");
-function getLocation()
-{
-	if (navigator.geolocation)
-	{
-		navigator.geolocation.getCurrentPosition(showPosition);
-	}
-	else
-	{
-		x.innerHTML="该浏览器不支持获取地理位置。";
-	}
-}
-
-function showPosition(position)
-{
-	x.innerHTML="纬度: " + position.coords.latitude +
-	"<br>经度: " + position.coords.longitude;
-}
-</script>
+<div class="container">
+  <ul class="list">
+    <li><span>位置精度</span><span class="accuracy">定位中...</span></li>
+    <li><span>经度</span><span class="longitude">定位中...</span></li>
+    <li><span>维度</span><span class="latitude">定位中...</span></li>
+    <li><span>海拔精度</span><span class="altitudeAccuracy">定位中...</span></li>
+    <li><span>海拔</span><span class="altitude">定位中...</span></li>
+    <li><span>方向</span><span class="heading">定位中...</span></li>
+    <li><span>速度</span><span class="speed">定位中...</span></li>
+  </ul>
+</div>
 </body>
+<script type='text/javascript' src='./js/index.js'></script>
 </html>
